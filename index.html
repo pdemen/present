@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!--<link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css">-->
+    <link rel="shortcut icon" href="https://friends.podari-zhizn.ru/favicon_friends.png" type="image/png">
+    <link type="text/css" rel="stylesheet" href="https://friends.podari-zhizn.ru/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all">
+    <link type="text/css" rel="stylesheet" href="https://friends.podari-zhizn.ru/sites/default/files/css/css_41x8C48NxIavdAQk4qfV8PldWau2oShDtSEMvGep-rQ.css" media="all">
+    <link type="text/css" rel="stylesheet" href="https://friends.podari-zhizn.ru/sites/default/files/css/css_8luJdnTuoPSvddaGbB6yGuMc14f903rAckiDoFzkFRY.css" media="all">
+    <link type="text/css" rel="stylesheet" href="https://friends.podari-zhizn.ru/sites/default/files/css/css_gdRyyiG4ynwMXseySZ_mpXBdLvyO4GCMqyTGWaNhWR8.css" media="all">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="jimp.min.js"></script>
+    <!--<script src="https://raw.githubusercontent.com/svgdotjs/svg.js/master/dist/svg.js"></script>-->
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<header id="header">
+    <div class="container-fluid header-top">
+        <div class="row">
+            <div class="col-sm-7 col-md-4 col-xs-6">
+                <a href="/" class="link-logo link-logo-h">
+                    <img src="svg/logo.svg" alt="">
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-5 col-md-8 h-right-block">
+                <div class="pull-right header-right-block">
+                    <a href="#" class="i-search search-btn"></a><span class="search-btn-text hidden-xs">Поиск</span>
+
+                    <a href="/user/login" class="user-status"><i class="user-reg-text hidden-xs">Вход | Регистрация</i><span class="icon-key"></span></a>
+
+                    <div class="menu-button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <i class="menu-text hidden-xs">Меню</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="block-life-search-search-results" class="block block-life-search">
+            <div class="content">
+                <div class="search-wrap">
+                    <div class="search-top">
+                        <div class="search-top-inner">
+                            <form class="form-search">
+                                <input type="text" class="search-input" placeholder="поиск">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="search-body">
+                        <div class="search-body-inner">
+                            <h4 class="search-body-title">Результаты поиска</h4>
+                            <p class="search-body-desc">Всего нашлось <span class="results-count">0 результатов</span></p>
+                            <ul class="search-found">
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>  </div>
+        </div>
+        <div class="menu-wrap bg-responsive"><ul class="menu-list"><li class="menu-item"><a href="/events-list" title="" class="link-menu">Акции фонда</a></li>
+            <li class="menu-item"><a href="/campaigns" title="" class="link-menu">Кампании друзей</a></li>
+            <li class="menu-item"><a href="/campaigns-map" title="" class="link-menu">Карта кампаний</a></li>
+            <li class="menu-item"><a href="/money-page" title="" class="link-menu">На что нужны деньги</a></li>
+            <li class="menu-item"><a href="/about" title="" class="link-menu">О нас</a></li>
+        </ul><span class="icon-menu icon-angle-right"></span></div>  </div>
+</header>
+<div class="container-fluid">
+    <div class="row row-pad">
+            <div class="col-sm-6" id="infoText">
+                <div class="row">
+                    <div class="col">
+                        <h5>ВВОД ДАННЫХ</h5>
+                        <p class="p-font">Укажите, кого вы хотите поздравить, ваше поздравление и количество лекций.
+                            Нажмите кнопку «Посмотреть сертификат» и убедитесь, что вам все нравится.
+                            Как понять, дарить отдельные лекции или целые курсы? Не переживайте, можно
+                            всегда заменить одно на другое — для этого достаточно позвонить +74993993230
+                            или написать нам на hello@levelvan.ru. Важно: если вы хотите подарить сертификат
+                            на конкретную лекцию или курс, то покупку нужно будет совершить на странице выбранной программы.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>ОПЛАТА</h5>
+                        <p class="p-font">Вы сможете оплатить сертификат банковской картой на сайте или наличными через любой
+                            терминал. Оплата доступна после заполнения сертификата.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>СЕРТИФИКАТ</h5>
+                        <p class="p-font">Сразу после оплаты вы получите подарочный сертификат форматом А4 на свою электронную почту.
+                            Его можно переслать тому, кого вы хотите поздравить, или распечатать, чтобы вручить лично.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5>КАК ВОСПОЛЬЗОВАТЬСЯ</h5>
+                        <p class="p-font">На сертификате будет ваше поздравление и уникальный промокод для каждой оплаченной лекции или
+                            курса. Промокод дает скидку на полную стоимость посещения. Тот, кому вы подарите сертификат,
+                            сможет выбрать любую программу Level One с подходящими для него датами, и ввести промокод при
+                            регистрации на мероприятие. Мы вовремя напомним о событии и пришлем материалы после лекции.
+                            Сертификат действует в течение шести месяцев.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col">
+                        <p id="p-choose-back">ВЫБЕРИТЕ ФОН</p>
+                    </div>
+                </div>
+                <div class="row imageMinCopy">
+                    <div class="col-md-4">
+
+                    </div>
+                    <div class="col-md-4">
+                        <div class="col-sm-3">
+                            <button type="button" id="img1" class="rounded-circle" onclick="img1()"></button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" id="img2" class="rounded-circle" onclick="img2()"></button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" id="img3" class="rounded-circle" onclick="img3()"></button>
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" id="img4" class="rounded-circle" onclick="img4()"></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+
+                    </div>
+                </div>
+                <div class="row imageFull">
+                    <div class="col" id="presentImg" style="background: url(svg/image1.jpg); background-size: cover;">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-6 whiteBox eachBlock">
+                                <!--форма-->
+                                <form action="" method="post">
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<p>Кого поздравлять</p>-->
+                                            <!--<label>-->
+                                                <!--<input type="text" name="name" placeholder="Имя и фамилия" class="blockData">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <label for="nameRecipient">Кого поздравлять</label>
+                                        <small id="nameRecipientHelp" class="form-text text-muted">Имя и Фамилия</small>
+                                        <input type="text" class="form-control" id="nameRecipient" aria-describedby="nameRecipientHelp" placeholder="Имя получателя">
+                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<p>Ваше поздравление</p>-->
+                                            <!--<label>-->
+                                                <!--<textarea name="textPostcard" maxlength="140" rows="5" class="blockData">Поздравляю!</textarea>-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <label for="textCongratulation">Ваше поздравление</label>
+                                        <small id="congratulationHelp" class="form-text text-muted">Поздравление на сертификате</small>
+                                        <textarea class="form-control" id="textCongratulation" aria-describedby="congratulationHelp" placeholder="Поздравляю!"></textarea>
+                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<p>Укажите сумму пожертвования</p>-->
+                                            <!--<label>-->
+                                                <!--<input type="text" name="sum" placeholder="Сумма" class="blockData">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <label for="sumDonation">Сумма пожертвования</label>
+                                        <small id="donationHelp" class="form-text text-muted">Сумма в рублях</small>
+                                        <input type="text" class="form-control" id="sumDonation" aria-describedby="donationHelp" placeholder="100">
+                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<label>-->
+                                                <!--<input type="text" name="signature" placeholder="Как подписать" class="blockData">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <small id="SenderHelp" class="form-text text-muted">Как подписать</small>
+                                        <input type="text" class="form-control" id="nameSender" aria-describedby="senderHelp" placeholder="Имя отправителя">
+                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<label>-->
+                                                <!--<input type="email" name="email" placeholder="email" class="blockData">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="emailSender" aria-describedby="emailHelp" placeholder="example@mail.ru">
+                                    </div>
+                                    <!--<div class="row">-->
+                                        <!--<div class="col">-->
+                                            <!--<label>-->
+                                                <!--<input type="tel" name="telephone" placeholder="Телефон" class="blockData">-->
+                                            <!--</label>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<button type="button" name="showCard" onclick="" class="blockData" onclick="lookPostcard()">Просмотр</button>-->
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                        Просмотр
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">Пожертовать</button>
+                                    <!--<input type="submit" name="pay" placeholder="Оплатить" class="blockData">-->
+                                </form>
+                            </div>
+                            <div class="col-sm-3">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" id="postcard" style="height: 700px">
+            <div class="row" style="height: 35%">
+            </div>
+            <div class="row" style="height: 5%" id="fromName">
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                </div>
+                <div class="col-sm">
+                    От кого открытка
+                </div>
+                <div class="col-sm-1">
+                </div>
+            </div>
+            <div class="row" style="height: 10%" id="toName">
+                <div class="col col-lg-4">
+                </div>
+                <div class="col-md-auto">
+                    Тут имя кому открытка
+                </div>
+                <div class="col col-lg-4">
+                </div>
+            </div>
+            <div class="row" style="height: 30%" id="textPostcard">
+                <div class="col col-md-1">
+                </div>
+                <div class="col-md">
+                    <p>Вы держите в руках самый Большой и Настоящий подарок: теплую и искреннюю благодарность от маленького пациента, который ведет борьбу с тяжелым недугом. Именно ему Вы с нашей помощью передали огромную ценность - шанс на выздоровление. Фонд "Подари жизнь" помогает детям с тяжелыми онкогематологическими заболеваниями. И благодаря Вашей поддержке мы имеем возможность помогать детям лечиться, а врачам лечить. Спасибо Вам!</p>
+                </div>
+                <div class="col col-md-1">
+                </div>
+            </div>
+            <div class="row" id="textPZ">
+                <div class="col-sm-1">
+                </div>
+                <div class="col-8">
+                    <p>Вы держите в руках самый Большой и Настоящий подарок: теплую и искреннюю благодарность от маленького пациента, который ведет борьбу с тяжелым недугом. Именно ему Вы с нашей помощью передали огромную ценность - шанс на выздоровление. Фонд "Подари жизнь" помогает детям с тяжелыми онкогематологическими заболеваниями. И благодаря Вашей поддержке мы имеем возможность помогать детям лечиться, а врачам лечить. Спасибо Вам!</p>
+                </div>
+                <div class="col">
+                </div>
+                <div class="col">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<footer id="footer">-->
+    <!--<div class="region region-footer">-->
+        <!--<div id="block-block-4" class="block block-block">-->
+            <!--<div class="content">-->
+                <!--<div class="container-fluid">-->
+                    <!--<div class="row">-->
+                        <!--<div class="col-sm-6">-->
+                            <!--<ul class="footer-menu"><li><a href="/about">О проекте</a></li>-->
+                                <!--<li><a href="/questions">Часто задаваемые вопросы</a></li>-->
+                            <!--</ul></div>-->
+                        <!--<div class="col-sm-2">-->
+
+                        <!--</div>-->
+                        <!--<div class="col-sm-4 list-social-wrap">-->
+                            <!--<ul class="list-inline list-social"><li><a href="https://twitter.com/podarizhizn" class="icon-twitter-bird"></a></li>-->
+                                <!--<li><a href="https://vk.com/podaryzhizn" class="icon-vkontakte"></a></li>-->
+                                <!--<li><a href="https://www.facebook.com/podarizhizn" class="icon-facebook"></a></li>-->
+                                <!--<li><a href="https://instagram.com/podarizhizn/" class="icon-instagram"></a></li>-->
+                                <!--<li><a href="http://ok.ru/group/52659580764321" class="icon-odnoklassniki"></a></li>-->
+                            <!--</ul></div>-->
+                    <!--</div>-->
+                    <!--<div class="row footer-bottom">-->
+                        <!--<a href="http://podari-zhizn.ru/" class="link-logo"><img src="/sites/all/themes/life/imgs/logo-bottom.svg" alt=""></a>-->
+                        <!--<span class="copyright-bottom">© Благотворительный фонд-->
+          <!--«Подари жизнь»</span>-->
+                        <!--<a href="mailto:dobro@podari-zhizn.ru" class="link-mail">dobro@podari-zhizn.ru</a>-->
+                        <!--<a href="tel:74959953105" class="link-phone">+7 (495) 995-31-05, +7 925 085 30 73</a>-->
+                    <!--</div>-->
+                <!--</div>  </div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</footer>-->
+</body>
+</html>
