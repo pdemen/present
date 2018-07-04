@@ -105,3 +105,17 @@ function lookPostcard () {
       });
   // }
 }
+
+// function returnRecipientName() {
+//   $( "input:text.nameRecipient" ).val((index, value ) => {
+//     $( "#postRecipientName" ).replaceWith( value );
+//     }
+//   );
+// }
+
+$("#nameRecipient").change(() => {
+  $( "input:text.nameRecipient" ).val((index, value ) => {
+    $( "#postRecipientName" ).replaceWith(value);
+    }
+  );
+});
