@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <!--<link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css">-->
@@ -79,11 +78,8 @@
             <!--f-->
         <!--</div>-->
             <div class="col-sm-6" id="infoText">
-                <div class="row">
-                    <div class="col-sm-2 icons">
-                        <img src="svg/icons/186236.svg">
-                    </div>
-                    <div class="col-sm-10">
+                <div class="row instruction">
+                    <div class="col">
                         <h5>ЧТО ЭТО?</h5>
                         <p class="p-font">У вашего друга праздник? День рождения? Годовщина работы в компании?
                             День, когда он наконец-то бросил курить?
@@ -94,52 +90,74 @@
                         </p>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row instruction">
                     <div class="col-sm-10">
                         <h5>КАК ЭТО РАБОТАЕТ?</h5>
                     </div>
                 </div>
-                <ol>
-
-                    <div class="col">
+                <div class="row instruction">
+                <div class="col-sm-2 icons">
+                        <img src="svg/icons/189114.svg">
+                    </div>
+                    <div class="col-sm-10">
                         <p class="p-font">Заполните форму, укажите имя того, кого вы хотели бы поздравить и текст поздравления.
                             Ваша открытка может быть подписанной или анонимной.
                         </p>
                     </div>
-                    <li>
-                </li>
-                <li>
-                        <div class="col">
+                </div>
+                <div class="row instruction">
+                    <div class="col-sm-2">
+                        <img src="svg/icons/189069.svg">
+                    </div>
+                        <div class="col-sm-10">
                             <p class="p-font">Выберите дизайн открытки.
                             </p>
                         </div>
-                </li>
-                <li>
-                        <div class="col">
+                </div>
+                <!--</li>-->
+                <!--<li>-->
+                <div class="row instruction">
+                    <div class="col-sm-2 icons">
+                        <img src="svg/icons/186236.svg">
+                    </div>
+                    <div class="col-sm-10">
                           <p class="p-font">Воспользуйтесь предварительным просмотром, чтобы убедиться, что вам нравится результат.
                          </p>
                      </div>
-                </li>
-                <li>
-                        <div class="col">
-                            <p class="p-font">Сделайте пожертвование в специальной форме.
-                            </p>
-                        </div>
-                </li>
-                <li>
-                        <div class="col">
+                </div>
+                <!--</li>-->
+                <!--<li>-->
+                <div class="row instruction">
+                    <div class="col-sm-2">
+                        <img src="svg/icons/523212.svg">
+                    </div>
+                    <div class="col-sm-10">
+                        <p class="p-font">Сделайте пожертвование в специальной форме.
+                        </p>
+                    </div>
+                </div>
+                <!--</li>-->
+                <!--<li>-->
+                <div class="row instruction">
+                      <div class="col-sm-2">
+                          <img src="svg/icons/201573.svg">
+                      </div>
+                        <div class="col-sm-10">
                             <p class="p-font">После совершения пожертвования вы получите открытку на свою
                                 электронную почту. Вы можете переслать ее адресату или распечатать, подписать и вручить лично.
                             </p>
                         </div>
-                </li>
-                 <li>
-                        <div class="col">
-                            <p class="p-font">Возникли вопросы или сложности? Мы рады помочь vf@podari-zhizn.ru, 8(925)085-30-73.
-                            </p>
-                        </div>
-                 </li>
-                </ol>
+                </div>
+                <!--</li>-->
+                 <!--<li>-->
+                <div class="row instruction">
+                    <div class="col">
+                        <p class="p-font">Возникли вопросы или сложности? Мы рады помочь vf@podari-zhizn.ru, 8(925)085-30-73.
+                        </p>
+                    </div>
+                </div>
+                 <!--</li>-->
+                <!--</ol>-->
             </div>
             <div class="col-sm-6">
                 <div class="row">
@@ -148,24 +166,28 @@
                     </div>
                 </div>
                 <div class="row imageMinCopy">
-                    <div class="col-md-4">
+                    <div class="col-sm-2">
 
                     </div>
-                    <div class="col-md-4">
-                        <div class="col-sm-3">
-                            <button type="button" id="img1" class="rounded-circle" onclick="img1()"></button>
+                    <div class="col-md-8">
+                        <div class="col-sm-2">
+                            <button type="button" id="img1" class="miniimage" onclick="img1()"></button>
                         </div>
-                        <div class="col-sm-3">
-                            <button type="button" id="img2" class="rounded-circle" onclick="img2()"></button>
+                        <div class="col-sm-2">
+                            <button type="button" id="img2" class="miniimage" onclick="img2()"></button>
                         </div>
-                        <div class="col-sm-3">
-                            <button type="button" id="img3" class="rounded-circle" onclick="img3()"></button>
+                        <div class="col-sm-2">
+                            <button type="button" id="img3" class="miniimage" onclick="img3()"></button>
                         </div>
-                        <div class="col-sm-3">
-                            <button type="button" id="img4" class="rounded-circle" onclick="img4()"></button>
+                        <div class="col-sm-2">
+                            <button type="button" id="img4" class="miniimage" onclick="img4()"></button>
                         </div>
+                        <div class="col-sm-2">
+                            <button type="button" id="img5" class="miniimage" onclick="img5()"></button>
+                        </div>
+
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-sm-2">
 
                     </div>
                 </div>
@@ -200,7 +222,7 @@
                                         <input type="email" class="form-control" id="emailSender" aria-describedby="emailHelp" placeholder="example@mail.ru">
                                     </div>
                                     <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" onclick="dataFromForm()">
                                         Просмотр
                                     </button>
                                     <button type="submit" class="btn btn-primary">Пожертовать</button>
@@ -236,7 +258,7 @@
             <div class="row" style="height: 10%" id="toName">
                 <div class="col col-lg-4">
                 </div>
-                <div class="col-md-auto" id="postRecipientName">
+                <div class="col-lg-4" id="postRecipientName">
                     Тут имя кому открытка
                 </div>
                 <div class="col col-lg-4">

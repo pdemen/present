@@ -4,12 +4,24 @@ function img1() {
   })
     .css("background-size", () => {
       return 'cover';
+    });
+  $("#postcard").css("background", () => {
+    return 'url(svg/postcard1.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
     })
 }
 
 function img2() {
   $("#presentImg").css("background", () => {
     return 'url(svg/image2.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
+    });
+  $("#postcard").css("background", () => {
+    return 'url(svg/postcard2.jpg)';
   })
     .css("background-size", () => {
       return 'cover';
@@ -22,12 +34,39 @@ function img3() {
   })
     .css("background-size", () => {
       return 'cover';
+    });
+  $("#postcard").css("background", () => {
+    return 'url(svg/postcard3.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
     })
 }
 
 function img4() {
   $("#presentImg").css("background-image", () => {
     return 'url(svg/image4.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
+    });
+  $("#postcard").css("background", () => {
+    return 'url(svg/postcard4.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
+    })
+}
+
+function img5() {
+  $("#presentImg").css("background-image", () => {
+    return 'url(svg/image5.jpg)';
+  })
+    .css("background-size", () => {
+      return 'cover';
+    });
+  $("#postcard").css("background", () => {
+    return 'url(svg/postcard5.jpg)';
   })
     .css("background-size", () => {
       return 'cover';
@@ -106,16 +145,36 @@ function lookPostcard () {
   // }
 }
 
-// function returnRecipientName() {
-//   $( "input:text.nameRecipient" ).val((index, value ) => {
-//     $( "#postRecipientName" ).replaceWith( value );
+
+function dataFromForm() {
+  let nameSender = $('#nameSender').val();
+  if (nameSender.length !== 0) {
+    $('#postSenderName').html(() => {
+      let emphasis = "<p>" + nameSender + "</p>";
+      return emphasis;
+    });
+  }
+  let nameRecipient = $('#nameRecipient').val();
+  if (nameRecipient.length !== 0) {
+    $('#postRecipientName').html(() => {
+      let emphasis = "<p>" + nameRecipient + "</p>";
+      return emphasis;
+    });
+  }
+  let textCongratulation = $('#textCongratulation').val();
+  if (textCongratulation.length !== 0) {
+    $('#postText').html(() => {
+      let emphasis = "<p>" + textCongratulation + "</p>";
+      return emphasis;
+    });
+  }
+}
+
+
+
+// $("#nameRecipient").change(() => {
+//   $( "input:text#nameRecipient" ).val((index, value ) => {
+//      return value;                                 //   $( "#postRecipientName" ).replaceWith(value);
 //     }
 //   );
-// }
-
-$("#nameRecipient").change(() => {
-  $( "input:text.nameRecipient" ).val((index, value ) => {
-    $( "#postRecipientName" ).replaceWith(value);
-    }
-  );
-});
+// });

@@ -598,35 +598,47 @@
 }
 
 #img1 {
-    background: url("svg/image1.jpg");
-    height: 40px;
-    width: 40px;
+    background: url("svg/icon1.png");
+    height: 70px;
+    width: 70px;
     border: 0px;
     background-size: contain;
+    margin-right: 20px;
 }
 
 #img2 {
- background: url("svg/image2.jpg");
-    height: 40px;
-    width: 40px;
+ background: url("svg/icon2.png");
+    height: 70px;
+    width: 70px;
     border: 0px;
     background-size: contain;
 }
 
 #img3 {
-    background: url("svg/image3.jpg");
-    height: 40px;
-    width: 40px;
+    background: url("svg/icon3.png");
+    height: 70px;
+    width: 70px;
     border: 0px;
     background-size: contain;
 }
 
 #img4 {
-    background: url("svg/image4.jpg");
-    height: 40px;
-    width: 40px;
+    background: url("svg/icon4.png");
+    height: 70px;
+    width: 70px;
     border: 0px;
     background-size: contain;
+}
+#img5 {
+    background: url("svg/icon5.png");
+    height: 70px;
+    width: 70px;
+    border: 0px;
+    background-size: contain;
+}
+
+.miniimage:hover {
+
 }
 
 #postcard {
@@ -674,3 +686,18 @@
     z-index: 0;
 }
 
+.instruction {
+    padding-bottom: 20px;
+}
+
+#postSenderName {
+    text-align: right;
+}
+
+#postRecipientName {
+    text-align: center;
+}
+
+#textPostcard {
+    text-align: justify;
+}
